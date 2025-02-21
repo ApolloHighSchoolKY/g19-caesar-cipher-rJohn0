@@ -17,13 +17,13 @@ public class CaesarCipher {
     public CaesarCipher() {
     shifted = new char [26];
     shift = 2;
-    
+    shifter(shift);
     }
 
     public CaesarCipher(int num){
-     shifted = new char [26];
-     shift = num;
-     shifter(shift);
+    shifted = new char [26];
+    shift = num;
+    shifter(shift);
     }
 
     public String encrypt(String message){
@@ -57,7 +57,7 @@ public class CaesarCipher {
         {
             boolean found = false;
             // go through alphabet position
-            for(int z =0; z<alphabet.length; z++)
+            for(int z =0; z<shifted.length; z++)
             {
                 if(message.charAt(i) == shifted[z])
                 {
@@ -66,7 +66,7 @@ public class CaesarCipher {
                 }
             }
             if(!found)
-            outputDecrypt += "" + message.charAt(i);
+                outputDecrypt += message.charAt(i);
             
         }
     
@@ -78,7 +78,7 @@ public class CaesarCipher {
         {
             shifted[(i+num)%26] = alphabet[i];
         }
-        System.out.println(Arrays.toString(shifted));
+       //tested to see if it shifted System.out.println(Arrays.toString(shifted));
     }
 
 
