@@ -24,7 +24,7 @@ public class G19 {
 		System.out.println(cipher.decrypt("a vav al!"));
 
 		CaesarCipher wow = new CaesarCipher();
-		System.out.println(wow.encrypt("I forgot default existed oops"));
+		System.out.println(wow.encrypt("i forgot default existed oops"));
 		System.out.println(wow.decrypt("fg!"));
     }
 
