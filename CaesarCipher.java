@@ -28,11 +28,11 @@ public class CaesarCipher {
 
     public String encrypt(String message){
         String outputEncrypt = "";
-
+        boolean found = false;
         //go through message position
         for(int i =0; i<message.length(); i++)
         {
-            boolean found = false;
+             found = false;
             // go through alphabet position
             for(int z =0; z<alphabet.length; z++)
             {
@@ -52,10 +52,10 @@ public class CaesarCipher {
 
     public String decrypt(String message){
         String outputDecrypt = "";
-
+        boolean found = false;
         for(int i =0; i<message.length(); i++)
         {
-            boolean found = false;
+         found = false;
             // go through alphabet position
             for(int z =0; z<shifted.length; z++)
             {
@@ -76,7 +76,7 @@ public class CaesarCipher {
     public void shifter(int num){
         for(int i = 0; i<alphabet.length; i++)
         {
-            shifted[(i+num)%26] = alphabet[i];
+            shifted[(i+num)%alphabet.length] = alphabet[i];
         }
        //tested to see if it shifted System.out.println(Arrays.toString(shifted));
     }
